@@ -17,6 +17,9 @@ namespace WorkoutApplication.Model
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+            
+            modelbuilder.Entity<Exercise>().Property(p => p.Id).HasIdentityOptions(startValue: 4);
+
             modelBuilder.Entity<Exercise>().HasData(
                 new Exercise
                 {
